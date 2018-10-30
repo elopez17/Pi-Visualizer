@@ -19,7 +19,7 @@ This project will focus on the number Pi, which will attempt to create a visual 
   * For DOM manipulations and graphics logic
 ### Implementation Timeline
 ##### Day 1:
-- [ ] Setup file tree structure
+- [x] Setup file tree structure
 - [ ] learn how to use canvas
 - [ ] implement form for user inputs
 - [ ] add start button
