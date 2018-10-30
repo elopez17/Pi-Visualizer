@@ -106,6 +106,7 @@ canvas {
   height: 600px;
   background-color: black;
   border-radius: 25%;
+  z-index: 2;
 }
 
 header {
