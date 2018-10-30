@@ -33,6 +33,7 @@ This project will focus on the number Pi, which will attempt to create a visual 
 - [ ] curve lines
 ##### Day 3:
 - [ ] add styling to page
+- [ ] Host Live
 ##### Day 4:
 - [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
 ##### Day 5:
