@@ -1,0 +1,21 @@
+{
+  "name": "Pi-Visualizer",
+  "version": "1.0.0",
+  "description": "--- ### Background and Overview The idea for this project is inspired by Martin Krzywinski's artwork which aims to visually represent significant mathematical numbers. This project will focus on the number Pi, which will attempt to create a visual representation by using a circle to represent numbers 0-9 then graphing lines within the circle from one number to the next based off of the sequence of numbers in Pi.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -o dist/bundle.js --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elopez17/Pi-Visualizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elopez17/Pi-Visualizer/issues"
+  },
+  "homepage": "https://github.com/elopez17/Pi-Visualizer#readme"
+}

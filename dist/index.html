@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pi Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="bundle.js"></script>
+</head>
+<body>
+  <header><h1>A Visual Representation of Pi</h1></header>
+  <div class="sidebar">
+    <div class="select-container">Number of digits to display <br>
+      <select name="digits" id="digits">
+        <option value="10">10</option>
+      </select>
+    </div>
+    <span id="start-btn"></span>
+    <span id="pause-btn"></span>
+    <span id="restart-btn"></span>
+    <span id="skip-btn"></span>
+  </div>
+  <canvas></canvas>
+  <span id="display-number"></span><h1 id="current-number"></h1>
+</body>
+</html>
