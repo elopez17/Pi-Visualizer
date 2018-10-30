@@ -20,8 +20,20 @@ This project will focus on the number Pi, which will attempt to create a visual 
 ### Implementation Timeline
 ##### Day 1:
 - [ ] Setup file tree structure
-- [ ] 
+- [ ] learn how to use canvas
+- [ ] implement form for user inputs
+- [ ] add start button
+- [ ] display numbers one by one 
+- [ ] add emphasis to current number
 ##### Day 2:
+- [ ] draw circle graph
+- [ ] draw lines based on current number and next number
+- [ ] parse the number Pi from a file
+- [ ] use the parsed data instead of hard coded number
+- [ ] curve lines
 ##### Day 3:
+- [ ] add styling to page
 ##### Day 4:
+- [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
 ##### Day 5:
+- [ ] debugging and final styling
