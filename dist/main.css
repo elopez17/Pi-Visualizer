@@ -99,14 +99,13 @@ html {
   border-radius: 20%;
 }
 
-canvas {
+#canvas-container {
   grid-row: 2;
   grid-column: 2;
-  width: 600px;
-  height: 600px;
+  align-self: start;
+  justify-self: start;
   background-color: black;
   border-radius: 25%;
-  z-index: 2;
 }
 
 header {
@@ -134,4 +133,7 @@ header {
   align-self: start;
   justify-self: center;
   color: aquamarine;
+}
+h1 {
+  font-size: 32px;
 }

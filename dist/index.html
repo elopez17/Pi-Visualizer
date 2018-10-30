@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pi Visualizer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="bundle.js"></script>
 </head>
@@ -21,7 +22,7 @@
     <span id="restart-btn"></span>
     <span id="skip-btn"></span>
   </div>
-  <canvas></canvas>
+  <div id="canvas-container"><canvas id="canvas" width="600" height="600"></canvas></div>
   <span id="display-number"></span><h1 id="current-number"></h1>
 </body>
 </html>
