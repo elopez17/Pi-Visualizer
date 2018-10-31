@@ -1,3 +1,5 @@
+const drawLine = require('./drawLine');
+
 const handleInput = function(ctx) {
   const start = document.getElementById('start-btn');
   const pause = document.getElementById('pause-btn');
@@ -12,10 +14,12 @@ const handleInput = function(ctx) {
     const displayNumber = document.getElementById('display-number');
     const currentNumber = document.getElementById('current-number');
     let counter = 0;
+
     const intervalId = setInterval(()=> {
       displayNumber.innerText += currentNumber.textContent;
       currentNumber.innerText = Pi[counter];
-      console.log(currentNumber.textContent);
+      let num = displayNumber.innerText;
+      drawLine(ctx, num, counter);
       counter++;
       if (counter === Pi.length) {
         displayNumber.innerText += currentNumber.textContent;
@@ -23,6 +27,7 @@ const handleInput = function(ctx) {
         clearInterval(intervalId);
       }
     }, 1000);
+
   });
   pause.addEventListener('click', function(e){
     e.stopPropagation();

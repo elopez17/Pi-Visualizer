@@ -21,18 +21,18 @@ This project will focus on the number Pi, which will attempt to create a visual 
 ### Implementation Timeline
 ##### Day 1:
 - [x] Setup file tree structure
-- [ ] learn how to use canvas
+- [x] learn how to use canvas
 - [x] implement form for user inputs
 - [x] add start button
 - [x] display numbers one by one 
 - [x] add emphasis to current number
 ##### Day 2:
-- [ ] draw circle graph
-- [ ] draw lines based on current number and next number
+- [x] draw circle graph
+- [x] draw lines based on current number and next number
+##### Day 3:
 - [ ] parse the number Pi from a file
 - [ ] use the parsed data instead of hard coded number
 - [ ] curve lines
-##### Day 3:
 - [ ] add styling to page
 - [ ] Host Live
 ##### Day 4:
