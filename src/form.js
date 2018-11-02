@@ -16,6 +16,8 @@ const handleInput = function(ctx) {
     
     const displayNumber = document.getElementById('display-number');
     const currentNumber = document.getElementById('current-number');
+    currentNumber.style.visibility = "visible";
+    displayNumber.style.visibility = "visible";
     displayNumber.innerText = "";
     let counter = 0;
 
@@ -25,11 +27,16 @@ const handleInput = function(ctx) {
       if (counter < Pi.length && isNaN(parseInt(Pi[counter]))) {
         nDigits++;
       }
+      if ((displayNumber.innerText.length + 1) % 40 === 0) {
+        let lineBreak = document.createElement("br");
+        displayNumber.appendChild(lineBreak);
+      }
       let num = displayNumber.innerText;
       drawLine(ctx, num, counter, nDigits);
       counter++;
       if (counter === nDigits + 1) {
         currentNumber.innerText = "";
+        currentNumber.style.visibility = "hidden";
         clearInterval(intervalId);
         console.log('finished');
       }

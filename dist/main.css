@@ -1,19 +1,22 @@
 body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-columns: auto auto auto;
   padding: 0;
   margin: 0;
-  background: grey url("images/math.jpg") 300px 0px;
-  background-size: 100% 100%;
+  background: grey url("images/math.jpg") 0px 0px;
+  background-size: 100% 110%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 html {
-  width: 100;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar {
@@ -25,15 +28,17 @@ html {
   width: 300px;
   height: 100%;
   margin: 0 auto 0 0;
-  background: rgb(77, 60, 75);
+  background-image: linear-gradient(#0e4881ba, black);
+  font-size: 24px;
+  text-align: center;
   color: #ccc;
 }
 
 .sidebar select {
   width: 40%;
-  margin: 10px 0;
-  margin: 0, auto;
-  margin-left: 65px;
+  /* margin: 10px 0;
+  margin: 0, auto; */
+  margin-left: 10px;
   margin-top: 20px;
 }
 
@@ -127,15 +132,17 @@ header {
 
 #display-number {
   padding: 10px 15px;
-  grid-row: 3;
+  grid-row: 4;
   grid-column: 2;
-  align-self: start;
   justify-self: start;
   background-color: black;
   border-radius: 10px;
   color: #ccc;
   font-size: 24px;
-  height: 24px;
+  height: auto;
+  margin: 0;
+  line-height: 30px;
+  visibility: hidden;
 }
 
 #current-number {
@@ -143,7 +150,12 @@ header {
   grid-column: 2;
   align-self: start;
   justify-self: center;
-  color: aquamarine;
+  position: relative;
+  right: 125px;
+  color: gold;
+  background: black;
+  padding: 5px 10px;
+  visibility: hidden;
 }
 
 #zero {
