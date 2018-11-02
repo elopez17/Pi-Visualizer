@@ -104,8 +104,19 @@ html {
   grid-column: 2;
   align-self: start;
   justify-self: start;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  padding: 30px;
   background-color: black;
-  border-radius: 25%;
+  border-radius: 50%;
+}
+
+#canvas {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
 }
 
 header {
@@ -134,6 +145,148 @@ header {
   justify-self: center;
   color: aquamarine;
 }
+
+#zero {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  position: relative;
+  left: 90px;
+  top: 5px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#nine {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  position: relative;
+  right: 90px;
+  top: 5px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#one {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  position: relative;
+  left: 240px;
+  top: 110px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#eight {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  position: relative;
+  right: 240px;
+  top: 110px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#two {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  /* position: relative;
+  right: 240px;
+  top: 110px; */
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#seven {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: start;
+  /* position: relative;
+  right: 90px;
+  top: 5px; */
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#three {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  position: relative;
+  left: 240px;
+  bottom: 110px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#six {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  position: relative;
+  right: 240px;
+  bottom: 110px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#four {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  position: relative;
+  left: 90px;
+  bottom: 5px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+#five {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  position: relative;
+  right: 90px;
+  bottom: 5px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+
 h1 {
   font-size: 32px;
 }

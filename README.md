@@ -35,6 +35,7 @@ This project will focus on the number Pi, which will attempt to create a visual 
 - [x] sort mid points of each segment in an array
 - [x] position lines according to the digits index in the entire number
 ##### Day 5:
+- [x] display each number next to given base segment
 - [ ] add functionality to sideform
 - [ ] Host Live
 - [ ] debugging and final styling
