@@ -30,11 +30,16 @@ This project will focus on the number Pi, which will attempt to create a visual 
 - [x] draw circle graph
 - [x] draw lines based on current number and next number
 ##### Day 3:
-- [ ] parse the number Pi from a file
-- [ ] use the parsed data instead of hard coded number
 - [x] curve lines
 ##### Day 4:
-- [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
+- [x] sort mid points of each segment in an array
+- [x] position lines according to the digits index in the entire number
 ##### Day 5:
+- [ ] add functionality to sideform
 - [ ] Host Live
 - [ ] debugging and final styling
+
+
+##### Future project features
+- [ ] parse the number Pi from a file
+- [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
