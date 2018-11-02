@@ -4,8 +4,8 @@ const drawLine = function(ctx, str, digitIdx, totalDigits){
   let digits = findDigits(str);
   if (digits.length !== 2) return false;
 
-  let origin = segments[digits[0]]
-  let dest = segments[digits[1]]
+  let origin = segments[digits[0]];
+  let dest = segments[digits[1]];
 
   ctx.fillStyle = origin.color;
   ctx.strokeStyle = origin.color;
