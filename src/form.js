@@ -6,7 +6,7 @@ const handleInput = function(ctx) {
   const skip = document.getElementById('skip-btn');
   const restart = document.getElementById('restart-btn');
 
-  const Pi = "3.1415926535";
+  const Pi = "0.1234567890";
   
   start.addEventListener('click', function(e){
     e.stopPropagation();
@@ -19,14 +19,13 @@ const handleInput = function(ctx) {
       displayNumber.innerText += currentNumber.textContent;
       currentNumber.innerText = Pi[counter];
       let num = displayNumber.innerText;
-      drawLine(ctx, num, counter);
+      drawLine(ctx, num, counter, Pi.length);
       counter++;
-      if (counter === Pi.length) {
-        displayNumber.innerText += currentNumber.textContent;
+      if (counter === Pi.length + 1) {
         currentNumber.innerText = "";
         clearInterval(intervalId);
       }
-    }, 1000);
+    }, 100);
 
   });
   pause.addEventListener('click', function(e){

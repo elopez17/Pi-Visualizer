@@ -32,10 +32,9 @@ This project will focus on the number Pi, which will attempt to create a visual 
 ##### Day 3:
 - [ ] parse the number Pi from a file
 - [ ] use the parsed data instead of hard coded number
-- [ ] curve lines
-- [ ] add styling to page
-- [ ] Host Live
+- [x] curve lines
 ##### Day 4:
 - [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
 ##### Day 5:
+- [ ] Host Live
 - [ ] debugging and final styling
