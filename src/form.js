@@ -14,10 +14,9 @@ const handleInput = function(ctx) {
 
   start.addEventListener('click', function(e){
     e.stopPropagation();
-    nDigits = document.getElementById("digits").value;
     const displayNumber = document.getElementById('display-number');
     const currentNumber = document.getElementById('current-number');
-    if (counter === nDigits + 1) {
+    if (counter === nDigits + 1 || counter === 0) {
       counter = 0;
       nDigits = document.getElementById("digits").value;
       displayNumber.innerText = "";
