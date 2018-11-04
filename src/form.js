@@ -14,6 +14,7 @@ const handleInput = function(ctx) {
 
   start.addEventListener('click', function(e){
     e.stopPropagation();
+    nDigits = document.getElementById("digits").value;
     const displayNumber = document.getElementById('display-number');
     const currentNumber = document.getElementById('current-number');
     if (counter === nDigits + 1) {
@@ -60,6 +61,7 @@ const handleInput = function(ctx) {
       displayNumber.innerText = "";
       currentNumber.innerText = "";
       currentNumber.style.visibility = "hidden";
+      displayNumber.style.visibility = "hidden";
       ctx.clearRect(0, 0, 600, 600);
       initGraph(ctx);
     });
