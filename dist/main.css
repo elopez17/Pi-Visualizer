@@ -56,7 +56,7 @@ html {
   cursor: pointer;
 }
 
-select > option:hover {
+#digits > option:hover {
   cursor: pointer;
 }
 
