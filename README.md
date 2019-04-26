@@ -36,11 +36,6 @@ This project will focus on the number Pi, which will attempt to create a visual 
 - [x] position lines according to the digits index in the entire number
 ##### Day 5:
 - [x] display each number next to given base segment
-- [ ] add functionality to sideform
-- [ ] Host Live
-- [ ] debugging and final styling
-
-
-##### Future project features
-- [ ] parse the number Pi from a file
-- [ ] consider bonus features such as allowing user input to decide which number to use for visualizer instead of Pi
+- [x] add functionality to sideform
+- [x] Host Live
+- [x] debugging and final styling
