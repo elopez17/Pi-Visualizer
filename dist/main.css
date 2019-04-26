@@ -56,6 +56,10 @@ html {
   cursor: pointer;
 }
 
+select > option:hover {
+  cursor: pointer;
+}
+
 #start-btn {
   grid-row: 2;
   grid-column: 1;
