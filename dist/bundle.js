@@ -1,1 +1,144 @@
-!function(t){var e={};function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:i})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(i,r,function(e){return t[e]}.bind(null,r));return i},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=1)}([function(t,e){const n={0:"#684130",1:"#e8915b",2:"#5c2e84",3:"#d668e0",4:"#1b8078",5:"#24f7ec",6:"#16559e",7:"#149aff",8:"#47633d",9:"#a3d674"},i=function(t,e){let i=(1.5+.2*e+.01)*Math.PI,r=(1.7+.2*e-.01)*Math.PI;t.beginPath(),t.strokeStyle=n[e],t.arc(300,300,270,i,r),t.stroke()};t.exports={initGraph:function(t){t.lineWidth=15;for(let e=0;e<10;e++)i(t,e);t.lineWidth=1},Segments:n}},function(t,e,n){const i=n(2),r=n(0).initGraph;document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("canvas").getContext("2d");r(t),i(t)})},function(t,e,n){const i=n(3),r=n(0).initGraph;t.exports=function(t){const e=document.getElementById("start-btn"),n=document.getElementById("pause-btn"),o=document.getElementById("skip-btn"),s=document.getElementById("restart-btn"),l="3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216420198";let a=0,d=document.getElementById("digits").value;e.addEventListener("click",function(e){e.stopPropagation();const u=document.getElementById("display-number"),c=document.getElementById("current-number");a!==d+1&&0!==a||(a=0,d=document.getElementById("digits").value,u.innerText="",c.innerText="",t.clearRect(0,0,600,600),r(t)),c.style.visibility="visible",u.style.visibility="visible";const h=setInterval(()=>{if(u.innerText+=c.textContent,c.innerText=l[a],a<l.length&&isNaN(parseInt(l[a]))&&d++,(u.innerText.length+1)%40==0){let t=document.createElement("br");u.appendChild(t)}let e=u.innerText;i(t,e,a,d),++a===d+1&&(c.innerText="",c.style.visibility="hidden",clearInterval(h))},100);n.addEventListener("click",function(t){t.stopPropagation(),clearInterval(h)}),s.addEventListener("click",function(e){e.stopPropagation(),clearInterval(h),a=0,d=document.getElementById("digits").value,u.innerText="",c.innerText="",c.style.visibility="hidden",u.style.visibility="hidden",t.clearRect(0,0,600,600),r(t)}),o.addEventListener("click",function(e){for(e.stopPropagation(),clearInterval(h);a<d+1;){if(u.innerText+=c.textContent,c.innerText=l[a],a<l.length&&isNaN(parseInt(l[a]))&&d++,(u.innerText.length+1)%40==0){let t=document.createElement("br");u.appendChild(t)}let e=u.innerText;i(t,e,a,d),a++}c.innerText="",c.style.visibility="hidden"})})}},function(t,e,n){const i=n(4),r=function(t){let e,n,i=t.length-1;for(;i>=0;){if(n=parseInt(t[i]),!isNaN(n)){i--;break}i--}for(;i>=0&&(e=parseInt(t[i]),isNaN(e));)i--;let r=[];return isNaN(e)||r.push(e),isNaN(n)||r.push(n),r};t.exports=function(t,e,n,o){let s=r(e);if(2!==s.length)return!1;let l=i[s[0]],a=i[s[1]];t.fillStyle=l.color,t.strokeStyle=l.color,t.beginPath();let d=Math.floor((n-1)/o*l.midPoints.length),u=Math.floor(n/o*a.midPoints.length);d=Math.min(d,l.midPoints.length-1),u=Math.min(u,a.midPoints.length-1),t.moveTo(l.midPoints[d][0],l.midPoints[d][1]),t.quadraticCurveTo(300,300,a.midPoints[u][0],a.midPoints[u][1]),t.stroke()}},function(t,e,n){const i=n(0).Segments,r={0:[[309,60.168],[436,102.252]],1:[[448,111.066],[526,219.228]],2:[[530,231.443],[530,368.556]],3:[[526,380.771],[448,488.933]],4:[[436,497.747],[309,539.831]],5:[[291,539.831],[164,497.747]],6:[[152,488.933],[74,380.771]],7:[[70,368.556],[70,231.443]],8:[[74,219.228],[152,111.066]],9:[[164,102.252],[291,60.168]]},o=function(t){this.number=t,this.color=i[t],this.start=r[t][0],this.end=r[t][1],this.midPoints=[];let e=Math.min(this.start[0],this.end[0]),n=Math.max(this.start[0],this.end[0]),o=Math.min(this.start[1],this.end[1]),s=Math.max(this.start[1],this.end[1]);for(let t=e;t<=n;t++){let e=Math.sqrt(Math.pow(240,2)-Math.pow(t-300,2));e+300>=o&&e+300<=s&&this.midPoints.push([t,e+300]),300-e>=o&&300-e<=s&&this.midPoints.push([t,300-e])}for(let t=o;t<=s;t++){let i=Math.sqrt(Math.pow(240,2)-Math.pow(t-300,2));(2===this.number||i+300>=e&&i+300<=n)&&this.midPoints.push([i+300,t]),(7===this.number||300-i>=e&&300-i<=n)&&this.midPoints.push([300-i,t])}this.start[0]===this.end[0]?this.start[1]<this.end[1]?this.midPoints.sort(function(t,e){return t[1]-e[1]}):this.midPoints.sort(function(t,e){return e[1]-t[1]}):this.start[0]<this.end[0]?this.midPoints.sort(function(t,e){return t[0]-e[0]}):this.midPoints.sort(function(t,e){return e[0]-t[0]})},s=new Array(10);for(let t=0;t<10;t++)s[t]=new o(t);t.exports=s}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const handleInput = __webpack_require__(/*! ./form */ \"./src/form.js\");\nconst initGraph = __webpack_require__(/*! ./initGraph */ \"./src/initGraph.js\").initGraph;\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const canvas = document.getElementById('canvas');\n  const ctx = canvas.getContext(\"2d\");\n    \n  initGraph(ctx);\n  handleInput(ctx);\n});\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/drawLine.js":
+/*!*************************!*\
+  !*** ./src/drawLine.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const segments = __webpack_require__(/*! ./segment */ \"./src/segment.js\");\n\nconst drawLine = function(ctx, str, digitIdx, totalDigits){\n  let digits = findDigits(str);\n  if (digits.length !== 2) return false;\n\n  let origin = segments[digits[0]];\n  let dest = segments[digits[1]];\n\n  ctx.fillStyle = origin.color;\n  ctx.strokeStyle = origin.color;\n  ctx.beginPath();\n  let originSegmentPos = Math.floor(((digitIdx - 1.0) / totalDigits) * origin.midPoints.length);\n  let destSegmentPos = Math.floor((digitIdx / totalDigits) * dest.midPoints.length);\n  originSegmentPos = Math.min(originSegmentPos, origin.midPoints.length - 1);\n  destSegmentPos = Math.min(destSegmentPos, dest.midPoints.length - 1);\n  ctx.moveTo(origin.midPoints[originSegmentPos][0],\n    origin.midPoints[originSegmentPos][1]);\n  ctx.quadraticCurveTo(300, 300,\n    dest.midPoints[destSegmentPos][0],\n    dest.midPoints[destSegmentPos][1]);\n  ctx.stroke();\n};\n\nconst findDigits = function(str){\n  let digit1, digit2, idx = str.length - 1;\n\n  while (idx >= 0) {\n    digit2 = parseInt(str[idx]);\n    if (!isNaN(digit2)) {\n      idx--;\n      break;\n    }\n    idx--;\n  }\n  while (idx >= 0) {\n    digit1 = parseInt(str[idx]);\n    if (!isNaN(digit1)) {\n      break;\n    }\n    idx--;\n  }\n\n  let result = [];\n  if (!isNaN(digit1)) result.push(digit1);\n  if (!isNaN(digit2)) result.push(digit2);\n  return result;\n};\n\nmodule.exports = drawLine;\n\n//# sourceURL=webpack:///./src/drawLine.js?");
+
+/***/ }),
+
+/***/ "./src/form.js":
+/*!*********************!*\
+  !*** ./src/form.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const drawLine = __webpack_require__(/*! ./drawLine */ \"./src/drawLine.js\");\nconst initGraph = __webpack_require__(/*! ./initGraph */ \"./src/initGraph.js\").initGraph;\n\nconst handleInput = function(ctx) {\n  const start = document.getElementById('start-btn');\n  const pause = document.getElementById('pause-btn');\n  const skip = document.getElementById('skip-btn');\n  const restart = document.getElementById('restart-btn');\n\n  const Pi = \"3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216420198\";\n  let counter = 0;\n  let nDigits = document.getElementById('digits').value;\n\n\n  start.addEventListener('click', function(e){\n    e.stopPropagation();\n    const displayNumber = document.getElementById('display-number');\n    const currentNumber = document.getElementById('current-number');\n    if (counter === nDigits + 1 || counter === 0) {\n      counter = 0;\n      nDigits = document.getElementById(\"digits\").value;\n      displayNumber.innerText = \"\";\n      currentNumber.innerText = \"\";\n      ctx.clearRect(0, 0, 600, 600);\n      initGraph(ctx);\n    }\n    \n    currentNumber.style.visibility = \"visible\";\n    displayNumber.style.visibility = \"visible\";\n\n    const intervalId = setInterval(()=> {\n      displayNumber.innerText += currentNumber.textContent;\n      currentNumber.innerText = Pi[counter];\n      if (counter < Pi.length && isNaN(parseInt(Pi[counter]))) {\n        nDigits++;\n      }\n      if ((displayNumber.innerText.length + 1) % 40 === 0) {\n        let lineBreak = document.createElement(\"br\");\n        displayNumber.appendChild(lineBreak);\n      }\n      let num = displayNumber.innerText;\n      drawLine(ctx, num, counter, nDigits);\n      counter++;\n      if (counter === nDigits + 1) {\n        currentNumber.innerText = \"\";\n        currentNumber.style.visibility = \"hidden\";\n        clearInterval(intervalId);\n      }\n    }, 100);\n\n    pause.addEventListener('click', function (e2) {\n      e2.stopPropagation();\n      clearInterval(intervalId);\n    });\n    restart.addEventListener('click', function (e3) {\n      e3.stopPropagation();\n      clearInterval(intervalId);\n      counter = 0;\n      nDigits = document.getElementById(\"digits\").value;\n      displayNumber.innerText = \"\";\n      currentNumber.innerText = \"\";\n      currentNumber.style.visibility = \"hidden\";\n      displayNumber.style.visibility = \"hidden\";\n      ctx.clearRect(0, 0, 600, 600);\n      initGraph(ctx);\n    });\n    skip.addEventListener('click', function(e4){\n      e4.stopPropagation();\n      clearInterval(intervalId);\n      while (counter < nDigits + 1) {\n        displayNumber.innerText += currentNumber.textContent;\n        currentNumber.innerText = Pi[counter];\n        if (counter < Pi.length && isNaN(parseInt(Pi[counter]))) {\n          nDigits++;\n        }\n        if ((displayNumber.innerText.length + 1) % 40 === 0) {\n          let lineBreak = document.createElement(\"br\");\n          displayNumber.appendChild(lineBreak);\n        }\n        let num = displayNumber.innerText;\n        drawLine(ctx, num, counter, nDigits);\n        counter++;\n      }\n      currentNumber.innerText = \"\";\n      currentNumber.style.visibility = \"hidden\";\n    });\n\n  });\n\n};\n\nmodule.exports = handleInput;\n\n//# sourceURL=webpack:///./src/form.js?");
+
+/***/ }),
+
+/***/ "./src/initGraph.js":
+/*!**************************!*\
+  !*** ./src/initGraph.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const initGraph = function(ctx) {\n  ctx.lineWidth = 15;\n  for (let i = 0; i < 10; i++) {\n    drawSegment(ctx, i)\n  }\n  ctx.lineWidth = 1;\n};\n\nconst Segments = {\n  0: \"#684130\",\n  1: \"#e8915b\",\n  2: \"#5c2e84\",\n  3: \"#d668e0\",\n  4: \"#1b8078\",\n  5: \"#24f7ec\",\n  6: \"#16559e\",\n  7: \"#149aff\",\n  8: \"#47633d\",\n  9: \"#a3d674\"\n};\n\nconst drawSegment = function(ctx, index) {\n  let startAngle = (1.5 + (index * 0.2) + 0.01) * Math.PI;\n  let endAngle = (1.7 + (index * 0.2) - 0.01) * Math.PI;\n  ctx.beginPath();\n  ctx.strokeStyle = Segments[index];\n  ctx.arc(300, 300, 270, startAngle, endAngle);\n  ctx.stroke();\n};\n\nmodule.exports = {\n  initGraph,\n  Segments\n};\n\n//# sourceURL=webpack:///./src/initGraph.js?");
+
+/***/ }),
+
+/***/ "./src/segment.js":
+/*!************************!*\
+  !*** ./src/segment.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const COLORS = __webpack_require__(/*! ./initGraph */ \"./src/initGraph.js\").Segments;\n\nconst ENDS = {\n  0: [[309, 60.168], [436, 102.252]],\n  1: [[448, 111.066], [526, 219.228]],\n  2: [[530, 231.443], [530, 368.556]],\n  3: [[526, 380.771], [448, 488.933]],\n  4: [[436, 497.747], [309, 539.831]],\n  5: [[291, 539.831], [164, 497.747]],\n  6: [[152, 488.933], [74, 380.771]],\n  7: [[70, 368.556], [70, 231.443]],\n  8: [[74, 219.228], [152, 111.066]],\n  9: [[164, 102.252], [291, 60.168]]\n};\n\nconst Segment = function(index) {\n  this.number = index;\n  this.color = COLORS[index];\n  this.start = ENDS[index][0];\n  this.end = ENDS[index][1];\n  this.midPoints = [];\n\n  let lowerX = Math.min(this.start[0], this.end[0]);\n  let upperX = Math.max(this.start[0], this.end[0]);\n  let lowerY = Math.min(this.start[1], this.end[1]);\n  let upperY = Math.max(this.start[1], this.end[1]);\n\n  const radius = 240;\n  for (let x = lowerX; x <= upperX; x++) {\n    let y = Math.sqrt(Math.pow(radius, 2) - Math.pow(x - 300, 2));\n    if (y + 300 >= lowerY && y + 300 <= upperY) {\n      this.midPoints.push([x, y + 300]);\n    }\n    if (-y + 300 >= lowerY && -y + 300 <= upperY) {\n      this.midPoints.push([x, -y + 300]);\n    }\n  }\n  for (let y = lowerY; y <= upperY; y++) {\n    let x = Math.sqrt(Math.pow(radius, 2) - Math.pow(y - 300, 2));\n    if (this.number === 2 || (x + 300 >= lowerX && x + 300 <= upperX)) {\n      this.midPoints.push([x + 300, y]);\n    }\n    if (this.number === 7 || (-x + 300 >= lowerX && -x + 300 <= upperX)) {\n      this.midPoints.push([-x + 300, y]);\n    }\n  }\n  if (this.start[0] === this.end[0]) {//start x === end x\n    if (this.start[1] < this.end[1]) {//start y < end y\n      this.midPoints.sort(function(a, b){return a[1] - b[1]});\n    } else {\n      this.midPoints.sort(function(a, b){return b[1] - a[1]});\n    }\n  } else {\n    if (this.start[0] < this.end[0]) {//start x < end x\n      this.midPoints.sort(function(a, b){return a[0] - b[0]});\n    } else {\n      this.midPoints.sort(function(a, b){return b[0] - a[0]});\n    }\n  }\n};\n\nconst segments = new Array(10);\n\nfor (let i = 0; i < 10; i++) {\n  segments[i] = new Segment(i);\n}\n\nmodule.exports = segments;\n\n//# sourceURL=webpack:///./src/segment.js?");
+
+/***/ })
+
+/******/ });

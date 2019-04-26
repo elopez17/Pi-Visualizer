@@ -34,6 +34,10 @@ html {
   color: #ccc;
 }
 
+.sidebar > span:hover {
+  cursor: pointer;
+}
+
 .sidebar select {
   width: 40%;
   margin-left: 10px;
@@ -46,6 +50,10 @@ html {
   align-self: center;
   justify-self: center;
   line-height: 24px;
+}
+
+.select-container:hover {
+  cursor: pointer;
 }
 
 #start-btn {
