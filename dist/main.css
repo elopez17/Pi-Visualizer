@@ -52,7 +52,7 @@ html {
   line-height: 24px;
 }
 
-.select-container:hover {
+.select-container > select:hover {
   cursor: pointer;
 }
 
