@@ -30,6 +30,7 @@ const handleInput = function(ctx) {
     if (isRunning === false) {
       isRunning = true;
     } else {
+      console.log("else: ");
       return;
     }
     
