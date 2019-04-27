@@ -29,9 +29,7 @@ const handleInput = function(ctx) {
     }
     if (isRunning === false) {
       isRunning = true;
-      console.log("isRunning");
     } else {
-      console.log("else: ");
       return;
     }
     
